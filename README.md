@@ -5,7 +5,6 @@ To use it simply create a `Vagrantfile` with the configuration below, and uncomm
 
     Vagrant.configure("2") do |config|
       config.vm.box = "briandilley/development"
-      config.vm.box_version = "1.0.0"
 
       # optimal settings for virtualbox
       config.vm.provider "virtualbox" do |vb|
