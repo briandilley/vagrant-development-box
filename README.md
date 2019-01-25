@@ -1,4 +1,4 @@
-# integration-test-vagrant
+# vagrant-development-box
 This repository holds the scripts that build the development vagrant box located at: https://app.vagrantup.com/briandilley/boxes/development.
 
 To use it simply create a `Vagrantfile` with the following:
@@ -8,6 +8,8 @@ To use it simply create a `Vagrantfile` with the following:
       config.vm.box_version = "1.0.0"
       # additional options from below for which services to start
     end
+
+For optimal conditions you'll want to set the # of CPUs to be at least 2 and 6144mb of ram.
 
 ## Services
 The following services are installed by default but are not started.  You will need to add these to your Vagrant file to have them start by default.
@@ -60,3 +62,15 @@ The following services are installed by default but are not started.  You will n
     - autostart: `config.vm.provision "shell", inline: "update-rc.d chronograf enable"`
 - Telegraf
     - autostart: `config.vm.provision "shell", inline: "update-rc.d telegraf enable"`
+- Cassandra
+    - ports: 9031, 9032, 9033, 9161, 9162, 9163, 
+    - autostart: `config.vm.provision "shell", inline: "/bin/bash /opt/cassandra.sh"`
+    - network configuration: `config.vm.network "private_network", ip: "10.0.2.31"`
+    - network configuration: `config.vm.network "private_network", ip: "10.0.2.32"`
+    - network configuration: `config.vm.network "private_network", ip: "10.0.2.33"`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.31", host: 9031`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.32", host: 9032`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.33", host: 9033`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.31", host: 9161`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.32", host: 9162`
+    - network configuration: `config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.33", host: 9163`

@@ -31,13 +31,7 @@ sudo pip install git+https://github.com/pcmanus/ccm.git@${CCM_VERSION}
 # Bring up cluster
 export TERM="dumb"
 # the 10.0.2.3 really means "start the first node at 10.0.2.31"
-CCM_COMMAND="JAVA_HOME=/opt/jdk1.8.0_201 ccm create vagrant -v 3.0.9 -n 3 -d -s -i 10.0.2.3 --vnodes --root"
+CCM_COMMAND="JAVA_HOME=/opt/jdk1.8.0_202 ccm create vagrant -v 3.0.9 -n 3 -d -s -i 10.0.2.3 --vnodes --root"
 echo Bringing up 3 node Cassandra Cluster
 echo If this fails, login to the box using vagrant ssh and then execute the command: sudo $CCM_COMMAND
 sudo $CCM_COMMAND
-
-# ccm node1 nodetool ring # seems to be a timing issue, cannot run immediately
-echo
-echo Wow, thats a lotta meatballs
-echo
-

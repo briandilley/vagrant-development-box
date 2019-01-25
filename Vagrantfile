@@ -14,6 +14,10 @@ Vagrant.configure("2") do |config|
      vb.cpus = 2
   end
 
+  config.vm.provision "shell", inline: "touch /opt/cassandra.sh && chmod 755 /opt/cassandra.sh"
+  config.vm.provision "file", source: "./scripts/cassandra.sh", destination: "cassandra.sh"
+  config.vm.provision "shell", inline: "mv cassandra.sh /opt/cassandra.sh && chmod 755 /opt/cassandra.sh"
+
   config.vm.provision "shell", inline: "apt-get update -y"
   config.vm.provision "shell", path: "./scripts/tools.sh"
   config.vm.provision "shell", path: "./scripts/java.sh"
@@ -23,5 +27,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./scripts/postgresql.sh"
   config.vm.provision "shell", path: "./scripts/mysql.sh"
   config.vm.provision "shell", path: "./scripts/influxdb.sh"
+  config.vm.provision "shell", inline: "/bin/bash /opt/cassandra.sh"
+  config.vm.provision "shell", inline: "sudo apt-get clean"
+  config.vm.provision "shell", inline: "sudo dd if=/dev/zero of=/EMPTY bs=1M"
+  config.vm.provision "shell", inline: "sudo rm -f /EMPTY"
+  config.vm.provision "shell", inline: "cat /dev/null > ~/.bash_history && history -c && exit"
 
 end
