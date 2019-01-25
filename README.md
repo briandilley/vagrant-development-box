@@ -8,6 +8,7 @@ To use it simply create a `Vagrantfile` with the configuration below, and uncomm
 
       # optimal settings for virtualbox
       config.vm.provider "virtualbox" do |vb|
+        # vb.gui = true
         vb.memory = 6144
         vb.cpus = 2
       end
