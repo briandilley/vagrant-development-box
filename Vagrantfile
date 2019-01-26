@@ -4,12 +4,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.network "private_network", ip: "10.0.2.31"
-  config.vm.network "private_network", ip: "10.0.2.32"
-  config.vm.network "private_network", ip: "10.0.2.33"
+  config.vm.network "private_network", ip: "10.0.2.31", auto_configure: true, virtualbox__intnet: true
+  config.vm.network "private_network", ip: "10.0.2.32", auto_configure: true, virtualbox__intnet: true
+  config.vm.network "private_network", ip: "10.0.2.33", auto_configure: true, virtualbox__intnet: true
 
   config.vm.provider "virtualbox" do |vb|
-     vb.gui = false
+     vb.gui = true
      vb.memory = 6144
      vb.cpus = 2
   end
