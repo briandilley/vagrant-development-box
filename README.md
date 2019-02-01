@@ -97,15 +97,15 @@ To use it simply create a `Vagrantfile` with the configuration below, and uncomm
       #####
       ## Cassandra
       ##
-      # config.vm.network "private_network", ip: "10.0.2.31"
-      # config.vm.network "private_network", ip: "10.0.2.32"
-      # config.vm.network "private_network", ip: "10.0.2.33"
-      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.31", host: 9031
-      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.32", host: 9032
-      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.2.33", host: 9033
-      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.31", host: 9161
-      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.32", host: 9162
-      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.2.33", host: 9163
+      # config.vm.network "private_network", ip: "10.0.4.31"
+      # config.vm.network "private_network", ip: "10.0.4.32"
+      # config.vm.network "private_network", ip: "10.0.4.33"
+      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.4.31", host: 9031
+      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.4.32", host: 9032
+      # config.vm.network "forwarded_port", guest: 9042, guest_ip: "10.0.4.33", host: 9033
+      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.4.31", host: 9161
+      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.4.32", host: 9162
+      # config.vm.network "forwarded_port", guest: 9160, guest_ip: "10.0.4.33", host: 9163
       # config.vm.provision "shell", inline: "update-rc.d cassandra enable"
       # config.vm.provision "shell", inline: "service cassandra start"
 
