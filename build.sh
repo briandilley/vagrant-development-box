@@ -1,7 +1,14 @@
-#!/bin/bash
+#!/bin/bash -e
 
 vagrant up
 
-echo -e "NOW RUN:\nvagrant package --base ID_FROM_VIRTUAL_BOX_HERE --output development.box"
-echo "vagrant box add development development.box"
-echo "vagrant destroy"
+box_id=$(VBoxManage list vms | grep vagrant | sed -E 's/"(.*vagrant.*)\".*/\1/')
+
+rm -rf development.box
+
+echo "Packaging $box_id"
+vagrant package --base $box_id --output development.box
+
+vagrant box add development development.box
+
+vagrant destroy
