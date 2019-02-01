@@ -4,9 +4,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.network "private_network", ip: "10.0.2.31", auto_configure: true, virtualbox__intnet: true
-  config.vm.network "private_network", ip: "10.0.2.32", auto_configure: true, virtualbox__intnet: true
-  config.vm.network "private_network", ip: "10.0.2.33", auto_configure: true, virtualbox__intnet: true
+  config.vm.network "private_network", ip: "10.0.4.31", auto_configure: true
+  config.vm.network "private_network", ip: "10.0.4.32", auto_configure: true
+  config.vm.network "private_network", ip: "10.0.4.33", auto_configure: true
 
   config.vm.provider "virtualbox" do |vb|
      vb.gui = true

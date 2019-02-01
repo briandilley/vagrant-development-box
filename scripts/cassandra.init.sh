@@ -24,7 +24,7 @@ case "$1" in
      echo "CREATING CLUSTER"
      mkdir -p $CASSANDRA_DIR
      mkdir -p $CCM_CONF_DIR
-     ccm create --install-dir=$CCM_CONF_DIR --install-dir=$CASSANDRA_DIR -v 3.0.9 -n 3 -d -s -i 10.0.2.3 --vnodes --root vagrant
+     ccm create --install-dir=$CCM_CONF_DIR --install-dir=$CASSANDRA_DIR -v 3.0.9 -n 3 -d -s -i 10.0.4.3 --vnodes --root vagrant
    else
      ccm start
    fi
