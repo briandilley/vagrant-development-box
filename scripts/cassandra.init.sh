@@ -14,8 +14,8 @@ CASSANDRA_DIR=/opt/cassandra/3.0.9
 CCM_CONF_DIR=/opt/cassandra/ccm
 
 export TERM="dumb"
-export JAVA_HOME=/opt/jdk1.8.0_202
-export PATH=/opt/jdk1.8.0_202/bin:$PATH
+export JAVA_HOME=/opt/jdk1.8.0_201
+export PATH=/opt/jdk1.8.0_201/bin:$PATH
 
 case "$1" in
  start)

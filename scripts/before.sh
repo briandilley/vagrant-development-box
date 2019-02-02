@@ -7,6 +7,9 @@ sudo apt-get install -y \
     python-pip \
     htop \
     wget \
-    curl
+    curl \
+    software-properties-common \
+    python-software-properties \
+    apt-transport-https
 
 sudo pip install requests awscli

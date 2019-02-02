@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
-echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
-sudo apt-get purge cloud-init -y 
-sudo rm -rf /etc/cloud/
-sudo rm -rf /var/lib/cloud/
+#echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
+#sudo apt-get purge cloud-init -y 
+#sudo rm -rf /etc/cloud/
+#sudo rm -rf /var/lib/cloud/
 
 wget https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
 chmod 700 .ssh

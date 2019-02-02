@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
      vb.gui = true
      vb.memory = 6144
      vb.cpus = 2
+     vb.customize ["modifyvm", :id, "--usb", "off"]
+     vb.customize ["modifyvm", :id, "--usbehci", "off"]
   end
 
   config.ssh.insert_key = false
