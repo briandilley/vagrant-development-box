@@ -9,7 +9,15 @@ apt-get update -y
 # named 'develop' with the password 'develop'.
 # It also creates a database named 'develop' owned
 # by the 'develop' user.
-apt-get install postgresql-9.6 postgresql-contrib-9.6 -y
+apt-get install -y postgresql-9.6 \
+    postgresql-contrib-9.6 \
+    postgresql-9.6-postgis-2.4 \
+    postgresql-9.6-postgis-2.4-scripts \
+    postgresql-9.6-pgrouting \
+    postgresql-9.6-hll \
+    postgresql-9.6-jsquery \
+    postgresql-9.6-pgmemcache \
+    postgresql-9.6-pgq3
 service postgresql restart
 echo "CREATE ROLE develop SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN PASSWORD 'develop';" | sudo -u postgres psql
 sudo -u postgres createdb -O develop develop
