@@ -18,4 +18,4 @@ FLUSH PRIVILEGES;
 EOF
 
 sudo service mysql stop
-sudo update-rc.d mysql disable
+sudo update-rc.d mysql disable || true

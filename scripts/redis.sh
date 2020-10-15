@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 # update package manager
-sudo add-apt-repository ppa:chris-lea/redis-server -y
-sudo apt-add-repository ppa:brightbox/ruby-ng -y
-apt-get update -y
+#sudo add-apt-repository ppa:chris-lea/redis-server -y
+#sudo apt-add-repository ppa:brightbox/ruby-ng -y
+#apt-get update -y
 
 # install and configure redis cluster
 apt-get install redis-server -y
@@ -55,19 +55,19 @@ service redis-server0 restart
 service redis-server1 restart
 service redis-server2 restart
 
-apt-get install ruby2.2 -y
-gem2.2 install redis
+apt-get install ruby -y
+gem install redis
 echo "yes" | redis-cli --cluster create 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382
 
 
 sudo service redis-server stop
-sudo update-rc.d redis-server disable
+sudo update-rc.d redis-server disable || true
 
 sudo service redis-server0 stop
-sudo update-rc.d redis-server0 disable
+sudo update-rc.d redis-server0 disable || true
 
 sudo service redis-server1 stop
-sudo update-rc.d redis-server1 disable
+sudo update-rc.d redis-server1 disable || true
 
 sudo service redis-server2 stop
-sudo update-rc.d redis-server2 disable
+sudo update-rc.d redis-server2 disable || true

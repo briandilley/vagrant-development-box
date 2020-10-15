@@ -30,5 +30,5 @@ cat /etc/kibana/kibana.yml
 
 sudo service elasticsearch stop
 sudo service kibana stop
-sudo update-rc.d elasticsearch disable
-sudo update-rc.d kibana disable
+sudo update-rc.d elasticsearch disable || true
+sudo update-rc.d kibana disable || true

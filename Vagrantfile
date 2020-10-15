@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "minimal/trusty64"
+  config.vm.box = "geerlingguy/ubuntu2004"
   
   config.vm.network "private_network", ip: "10.0.4.31", auto_configure: true
   config.vm.network "private_network", ip: "10.0.4.32", auto_configure: true

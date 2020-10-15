@@ -10,12 +10,12 @@ chmod 700 .ssh
 chmod 600 .ssh/authorized_keys
 chown -R vagrant:vagrant .ssh
 
-sudo sed -i.backup -E 's/auto[[:blank:]]+([^[:blank:]]+)/allow-hotplug \1/g' /etc/network/interfaces
-echo "Contents of /etc/network/interfaces:"
-echo "#########################################"
-cat /etc/network/interfaces
-echo ""
-echo "#########################################"
+#sudo sed -i.backup -E 's/auto[[:blank:]]+([^[:blank:]]+)/allow-hotplug \1/g' /etc/network/interfaces
+#echo "Contents of /etc/network/interfaces:"
+#echo "#########################################"
+#cat /etc/network/interfaces || true
+#echo ""
+#echo "#########################################"
 
 sudo apt-get autoremove -y
 sudo apt-get clean -y
