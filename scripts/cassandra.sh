@@ -26,7 +26,7 @@ sudo pip3 install --upgrade pip
 
 # Install CCM and its dependencies
 echo Installing CCM ...
-sudo pip3 install git+https://github.com/pcmanus/ccm.git@${CCM_VERSION}
+sudo pip3 install git+https://github.com/riptano/ccm.git@${CCM_VERSION}
 
 sudo update-rc.d cassandra defaults || true
 sudo service cassandra start
